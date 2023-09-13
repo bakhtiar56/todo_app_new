@@ -1,0 +1,17 @@
+<form phx-submit="add_todo">
+
+  <fieldset>
+    <label for="nameField">Enter an item</label>
+    <input type="text" name="item" value="<%= @item %>"
+    placeholder="Go for a walk"
+    autofocus autocomplete="off" />
+    <input class="button-primary" type="submit" value="Add item">
+  </fieldset>
+</form>
+
+<ul class="list">
+ <%= for todo <- @todos do %>
+        <li><%= todo %></li>
+      <% end %>
+
+</ul>
