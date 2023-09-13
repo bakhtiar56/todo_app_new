@@ -17,8 +17,7 @@ defmodule TodoAppWeb.Router do
   scope "/", TodoAppWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
-    live "/light", TodoList
+    live "/", TodoList
 
   end
 
