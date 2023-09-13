@@ -9,7 +9,7 @@ import Config
 
 # Configures the endpoint
 config :todo_app, TodoAppWeb.Endpoint,
-  url: [host: "localhost"],
+  url: [host: "0.0.0.0"],
   render_errors: [
     formats: [html: TodoAppWeb.ErrorHTML, json: TodoAppWeb.ErrorJSON],
     layout: false
