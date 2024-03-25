@@ -18,3 +18,15 @@ config :logger, level: :info
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
+config :todo_app, TodoAppWeb.Endpoint,
+  # Binding to loopback ipv4 address prevents access from other machines.
+  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
+  http: [ip: {0, 0, 0, 0}, port: 4000],
+  check_origin: false,
+  server: true,
+  debug_errors: true,
+  secret_key_base: "TmSWY9N0w34oMHsj8bvLj6j00Lkv4qJ41KwEVkZaoBXLGly+eYgVud187igXnaxd",
+  watchers: [
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+  ]
